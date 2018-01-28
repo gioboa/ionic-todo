@@ -1,2 +1,10 @@
 # ionic-todo
-Ionic todo list
+
+Simple Ionic todo list
+
+# how to use
+
+git clone <repo url>
+cd ionic-todo
+npm i
+ionic serve
