@@ -7,29 +7,23 @@ import { AddItemPage } from '../pages/add-item/add-item';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
- 
+import { DataService } from '../shared/data/data.service';
+import { IonicStorageModule } from '@ionic/storage';
+
 @NgModule({
-  declarations: [
-    MyApp,
-    HomePage,
-    AddItemPage,
-    ItemDetailPage,
-  ],
+  declarations: [MyApp, HomePage, AddItemPage, ItemDetailPage],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    AddItemPage,
-    ItemDetailPage,
-  ],
+  entryComponents: [MyApp, HomePage, AddItemPage, ItemDetailPage],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    DataService
   ]
 })
 export class AppModule {}
